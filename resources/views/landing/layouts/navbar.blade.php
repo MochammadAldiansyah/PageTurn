@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark pb-3 ">
+<nav id="mainNavbar" class="navbar navbar-expand-lg navbar-dark fixed-top pb-3 ">
   <div class="container">
     <a class="navbar-brand navbar-logo-custom" href="#">PageTurn</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" >
@@ -10,10 +10,10 @@
             <a class="nav-link" href="#">Beranda</a>
           </li>
         <li class="nav-item">
-          <a class="nav-link "  href="#">Katalog</a>
+          <a class="nav-link "  href="#koleksi">Katalog</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Fitur</a>
+          <a class="nav-link" href="#fitur">Fitur</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Testi</a>
@@ -26,3 +26,5 @@
 
   </div>
 </nav>
+
+

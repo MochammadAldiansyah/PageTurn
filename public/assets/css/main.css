@@ -1,6 +1,16 @@
 /* font utama */
 :root {
     --bs-body-font-family: 'Oswald', sans-serif;
+    --bs-body-bg: #050505;
+    --bs-body-color: #ffffff;
+
+
+}
+
+body {
+    background-color: var(--bs-body-bg) !important;
+    color: var(--bs-body-color) !important;
+
 }
 
 .navbar-logo-custom {
@@ -11,18 +21,53 @@
     letter-spacing: -1.6px;
 }
 
+/* Navbar Scroll Efek*/
+#mainNavbar {
+    background-color: transparent;
+    backdrop-filter: none;
+    border-bottom: 1px solid transparent;
+    box-shadow: none;
+    transition: background-color 0.4s ease,
+                backdrop-filter 0.4s ease,
+                border-bottom 0.4s ease,
+                box-shadow 0.4s ease;
+}
+
+#mainNavbar.navbar-scrolled {
+    background-color: rgba(10, 10, 10, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+}
+
+.font-oswald {
+    font-family: 'Oswald', sans-serif;
+}
+
+.font-serif {
+    font-family: "Georgia", serif;
+}
+
 /* Hero Section */
 .hero-section {
-    min-height: 80vh;
+    min-height: 100vh;
+    box-shadow: inset 0 0 100px rgba(0,0,0,0.8);
+    background:
+    radial-gradient(circle at left, rgba(255, 255, 255, 0.08) 0%, rgba(5, 5, 5, 0) 60%),
+        radial-gradient(circle at right, rgba(255, 255, 255, 0.08) 0%, rgba(5, 5, 5, 0) 60%),
+        #050505;
 }
 
 .hero-title {
-    font-size: 5rem !important;
+    font-size: 4.5rem !important;
     color: #ffffff !important;
+    letter-spacing: -1px;
 }
 
 .hero-description {
-    color: #d1d1d1 !important;
+    color: #a0a0a0 !important;
+    max-width: 700px;
 }
 
 .hero-btn-custom {
@@ -35,10 +80,104 @@
     box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
 }
 
-@media (max-width: 768px) {
-    .hero-section h1 {
-        font-size: 2.8rem !important;
+/* Utilities */
+.letter-spacing-1 {
+    letter-spacing: 1px;
+}
+
+.border-secondary {
+    border-color: #2a2a2a !important;
+}
+
+.bg-dark-custom {
+    background-color: #111111 !important;
+}
+
+.card-custom {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #ffffff !important;
+}
+
+.card-custom:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.hover-white:hover {
+    color: #ffffff !important;
+}
+
+/* Typography & Layout Utilities */
+.fs-70 { font-size: 0.7rem; }
+.fs-75 { font-size: 0.75rem; }
+.fs-85 { font-size: 0.85rem; }
+.fs-90 { font-size: 0.9rem; }
+.fs-110 { font-size: 1.1rem; }
+
+.lh-16 { line-height: 1.6; }
+.max-w-400 { max-width: 400px; }
+
+/* Book Cover Image */
+.book-cover-img {
+    max-width: 500px;
+    width: 100%;
+    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.9));
+    transition: transform 0.3s ease;
+}
+
+.book-cover-img:hover {
+    transform: translateY(-5px);
+}
+
+/* Custom Buttons */
+.btn-cta-custom {
+    letter-spacing: 1px;
+    transition: transform 0.3s ease;
+}
+
+.btn-cta-custom:hover {
+    transform: translateY(-3px);
+}
+
+.cta-section {
+    height: 100vh;
+    align-items: center;
+    display: flex;
+}
+
+.cta-title {
+    font-size: 5rem !important;
+    color: #111111 !important;
+    letter-spacing: -1px;
+}
+
+/* Responsive */
+@media (max-width: 991.98px) {
+   /* kode untuk background navbar */
+    #mainNavbar {
+        background-color: rgba(10, 10, 10, 0.85);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
     }
 }
 
+@media (max-width: 768px) {
+   .hero-title {
+        font-size: 2.2rem !important;
+        line-height: 1.3 !important;
+    }
 
+    .cta-title {
+        font-size: 2.2rem !important;
+        line-height: 1.3 !important;
+    }
+
+    .stats-section .border-end {
+        border-right: none !important;
+        border-bottom: 1px solid #2a2a2a;
+        padding-bottom: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+}
