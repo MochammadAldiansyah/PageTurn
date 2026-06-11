@@ -43,6 +43,7 @@ Aplikasi ini dikembangkan dengan *tech stack* modern untuk memastikan performa, 
 - **Interaktivitas UI:** JavaScript Vanilla / jQuery (Sesuai dengan komponen Bootstrap)
 - **Otentikasi:** Sistem Autentikasi Laravel
 - **Manajemen Hak Akses:** Spatie Laravel Permission
+- **Sistem Login/Register:** Laravel breeze
 - **Bundler:** Vite (Untuk proses kompilasi asset *frontend*)
 
 ---
