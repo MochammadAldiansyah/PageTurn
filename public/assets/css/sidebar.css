@@ -1,0 +1,123 @@
+
+    .sidebar {
+        width: 260px;
+        background-color: #000000;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding: 2.5rem 2rem;
+        display: flex;
+        flex-direction: column;
+        border-right: 1px solid rgba(255, 255, 255, 0.05);
+        font-family: 'Oswald', sans-serif;
+    }
+
+    .sidebar-brand {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #ffffff;
+        text-decoration: none;
+        letter-spacing: -1px;
+        margin-bottom: 3rem;
+        display: block;
+    }
+
+    .sidebar-category {
+        font-size: 0.75rem;
+        color: #666666;
+        letter-spacing: 2px;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+    }
+
+    .sidebar-nav {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 2.5rem 0;
+    }
+
+    .sidebar-item {
+        margin-bottom: 0.2rem;
+    }
+
+    .sidebar-link {
+        display: flex;
+        align-items: center;
+        color: #a0a0a0;
+        text-decoration: none;
+        padding: 0.7rem 0;
+        font-size: 0.95rem;
+        letter-spacing: 0.5px;
+        transition: color 0.3s ease;
+        position: relative;
+    }
+
+    .sidebar-link i {
+        width: 24px;
+        font-size: 1rem;
+        margin-right: 10px;
+        opacity: 0.8;
+    }
+
+    .sidebar-link:hover, .sidebar-link.active {
+        color: #ffffff;
+    }
+
+    .sidebar-link.active::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: #ffffff;
+    }
+
+    .sidebar-footer {
+        display: flex;
+        align-items: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        padding-top: 1.5rem;
+    }
+
+    .sidebar-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .sidebar-user-info {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .sidebar-user-name {
+        color: #ffffff;
+        font-size: 0.9rem;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        line-height: 1.2;
+    }
+
+    .sidebar-user-role {
+        color: #666666;
+        font-size: 0.7rem;
+        letter-spacing: 1px;
+        margin-top: 2px;
+    }
+
+    /* Mobile Sidebar Toggle */
+    @media (max-width: 768px) {
+        .sidebar {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+            z-index: 1040;
+        }
+        .sidebar.show {
+            transform: translateX(0);
+        }
+    }

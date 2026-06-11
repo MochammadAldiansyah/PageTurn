@@ -1,47 +1,95 @@
-<x-guest-layout>
-    <!-- Session Status -->
-    <x-auth-session-status class="mb-4" :status="session('status')" />
+@extends('landing.layouts.app')
 
-    <form method="POST" action="{{ route('login') }}">
-        @csrf
+@section('content')
 
-        <!-- Email Address -->
-        <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+<section class="auth-section">
+    <div class="auth-container">
+        {{-- Corner Borders --}}
+        <div class="corner-tl"></div>
+        <div class="corner-tr"></div>
+        <div class="corner-bl"></div>
+        <div class="corner-br"></div>
+
+        {{-- Header --}}
+        <div class="text-center mb-5">
+            <h2 class="auth-title text-white">SELAMAT DATANG<br>KEMBALI</h2>
+            <p class="auth-subtitle">Masuk ke akun PageTurn Anda.</p>
         </div>
 
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
-
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="current-password" />
-
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
+        {{-- Session Status --}}
+        @if (session('status'))
+        <div class="alert alert-success text-center mb-4" role="alert">
+            {{ session('status') }}
         </div>
+        @endif
 
-        <!-- Remember Me -->
-        <div class="block mt-4">
-            <label for="remember_me" class="inline-flex items-center">
-                <input id="remember_me" type="checkbox" class="rounded dark:bg-gray-900 border-gray-300 dark:border-gray-700 text-indigo-600 shadow-sm focus:ring-indigo-500 dark:focus:ring-indigo-600 dark:focus:ring-offset-gray-800" name="remember">
-                <span class="ms-2 text-sm text-gray-600 dark:text-gray-400">{{ __('Remember me') }}</span>
-            </label>
-        </div>
+        {{-- Login Form --}}
+        <form method="POST" action="{{ route('login') }}">
+            @csrf
 
-        <div class="flex items-center justify-end mt-4">
-            @if (Route::has('password.request'))
-                <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('password.request') }}">
-                    {{ __('Forgot your password?') }}
-                </a>
-            @endif
+            {{-- Email --}}
+            <div class="mb-4">
+                <label for="email" class="auth-label">ALAMAT EMAIL</label>
+                <input
+                    id="email"
+                    type="email"
+                    name="email"
+                    class="auth-input-line form-control @error('email') is-invalid @enderror"
+                    placeholder="nama@email.com"
+                    value="{{ old('email') }}"
+                    required
+                    autofocus
+                    autocomplete="username"
+                >
+                @error('email')
+                <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+            </div>
 
-            <x-primary-button class="ms-3">
-                {{ __('Log in') }}
-            </x-primary-button>
-        </div>
-    </form>
-</x-guest-layout>
+            {{-- Password --}}
+            <div class="mb-4">
+                <label for="password" class="auth-label">KATA SANDI</label>
+                <div class="position-relative">
+                    <input
+                        id="password"
+                        type="password"
+                        name="password"
+                        class="auth-input-line form-control pe-5 @error('password') is-invalid @enderror"
+                        placeholder="••••••••"
+                        required
+                        autocomplete="current-password"
+                    >
+                    <button type="button" class="btn-toggle-password position-absolute end-0 top-50 translate-middle-y border-0 bg-transparent text-white-50 p-2">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                            <circle cx="12" cy="12" r="3"></circle>
+                        </svg>
+                    </button>
+                </div>
+                @error('password')
+                <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+                
+                <div class="text-end mt-2">
+                    <a href="#" class="auth-link-sm text-decoration-none">Lupa kata sandi?</a>
+                </div>
+            </div>
+
+            {{-- Submit Button --}}
+            <button type="submit" class="auth-btn btn w-100 fw-bold d-flex justify-content-center align-items-center gap-2 mt-4">
+                MASUK
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+                    <polyline points="10 17 15 12 10 7"></polyline>
+                    <line x1="15" y1="12" x2="3" y2="12"></line>
+                </svg>
+            </button>
+            
+            <p class="auth-footer-text text-center mt-4 mb-0">
+                Belum punya akun? <a href="{{ route('register') }}" class="text-white fw-bold text-decoration-none">Daftar sekarang</a>
+            </p>
+        </form>
+    </div>
+</section>
+
+@endsection

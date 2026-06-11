@@ -1,0 +1,50 @@
+/* Typography */
+.font-oswald {
+    font-family: 'Oswald', sans-serif !important;
+}
+
+/* Widths */
+.w-48px { width: 48px !important; }
+.w-50px { width: 50px !important; }
+.w-80px { width: 80px !important; }
+.w-300px { width: 300px !important; }
+.w-320px { width: 320px !important; }
+.w-340px { width: 340px !important; }
+.w-400px { width: 400px !important; }
+.max-w-300px { max-width: 300px !important; }
+.max-w-400px { max-width: 400px !important; }
+.max-w-250px { max-width: 250px !important; }
+.w-full { width: 100% !important; }
+
+/* Heights */
+.h-48px { height: 48px !important; }
+.h-70px { height: 70px !important; }
+.h-80px { height: 80px !important; }
+.h-150px { height: 150px !important; }
+.h-250px { height: 250px !important; }
+.h-350px { height: 350px !important; }
+.max-h-400px { max-height: 400px !important; }
+
+/* Min Heights */
+.min-h-200px { min-height: 200px !important; }
+.min-h-300px { min-height: 300px !important; }
+
+/* Text Utility */
+.line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Positioning */
+.top-24px { top: 24px !important; }
+.right-32px { right: 32px !important; }
+.z-1050 { z-index: 1050 !important; }
+.fs-06rem { font-size: 0.6rem !important; }
+.fs-08rem { font-size: 0.8rem !important; }
+.fs-09rem { font-size: 0.9rem !important; }
+
+/* Misc */
+.white-space-nowrap { white-space: nowrap !important; }
+.scrollbar-none { scrollbar-width: none !important; }
