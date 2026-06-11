@@ -44,7 +44,7 @@
                     <h4 class=" fs-4 fw-bold" id="koleksi-title">Stellar Drift</h4>
                     <p class="text-uppercase letter-spacing-1 mb-4" id="koleksi-author">Nova Sterling</p>
                     <p class="mb-5 text-secondary max-w-400 lh-16" id="koleksi-desc">Sebuah novel antariksa yang menggambarkan petualangan di dunia luar angkasa.</p>
-                    <a href="#" class="btn btn-light text-dark fw-bold px-4 py-3 rounded-pill text-uppercase letter-spacing-1 fs-90">PINJAM SEKARANG</a>
+                    <a href="" class="btn btn-light text-dark fw-bold px-4 py-3 rounded-pill text-uppercase letter-spacing-1 fs-90">PINJAM SEKARANG</a>
                 </div>
             </div>
             <div class="col-md-6 text-end pe-md-5">

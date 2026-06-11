@@ -1,58 +1,113 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# PageTurn 📚
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+PageTurn adalah sebuah aplikasi **Sistem Manajemen Perpustakaan (Library Management System)** berbasis web modern yang dibangun menggunakan framework Laravel. Aplikasi ini dirancang untuk mendigitalkan proses peminjaman buku, mempermudah manajemen perpustakaan bagi pengelola (Admin), serta memberikan pengalaman yang ramah pengguna bagi anggota perpustakaan (User).
 
-## About Laravel
+Tujuan utama proyek ini adalah menyediakan platform yang terpusat di mana anggota dapat melihat katalog buku, meminjam buku secara *online*, dan admin dapat melacak ketersediaan buku, mengelola data anggota, serta memantau status pengembalian buku.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 👥 Hak Akses & Fitur Aplikasi
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Aplikasi ini menggunakan sistem *Role-Based Access Control* (RBAC) dengan dua peran utama: **Admin** dan **User**.
 
-## Learning Laravel
+### 1. Fitur Admin (Pengelola Perpustakaan)
+Admin memiliki hak akses penuh terhadap sistem manajemen perpustakaan.
+- **Dashboard Admin:** Ringkasan statistik perpustakaan (misalnya jumlah buku, pengguna aktif, dan peminjaman yang sedang berlangsung).
+- **Manajemen Pengguna (User Management):** Melihat daftar anggota yang terdaftar dan menghapus akun pengguna jika diperlukan.
+- **Manajemen Buku (Library Management):** Mengelola katalog buku. Admin dapat menambah buku baru, mengedit informasi buku (judul, kategori, penulis, dll), dan menghapus buku dari sistem.
+- **Pelacakan Peminjaman (Borrowing Tracking):** Memantau semua transaksi peminjaman buku oleh anggota. Admin juga berhak memperbarui status buku dari "Dipinjam" menjadi "Dikembalikan" setelah anggota mengembalikan buku fisiknya.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### 2. Fitur User (Anggota Perpustakaan)
+User adalah anggota perpustakaan yang telah mendaftar di sistem.
+- **Katalog Buku (Book Catalog):** Menelusuri daftar buku yang tersedia di perpustakaan.
+- **Peminjaman Buku (Borrow Book):** Melakukan permohonan peminjaman buku langsung dari katalog.
+- **Riwayat Peminjaman (Borrowing History):** Melihat status dan riwayat buku yang sedang atau pernah dipinjam.
+- **Profil Pengguna:** Mengatur dan memperbarui informasi profil akun.
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+## 🔄 Alur Kerja Sistem (Workflow)
 
-## Agentic Development
+1. **Registrasi/Login:** Pengguna baru mendaftar atau login ke dalam sistem.
+2. **Peminjaman:** Anggota (User) melihat Katalog dan memilih buku untuk dipinjam. Sistem akan mencatat detail peminjaman.
+3. **Pengambilan Buku Fisik:** Anggota mengambil buku di perpustakaan.
+4. **Pengembalian:** Anggota mengembalikan buku ke perpustakaan, lalu Admin akan memperbarui status di sistem (Mark as Returned).
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+---
 
-```bash
-composer require laravel/boost --dev
+## 🛠️ Teknologi yang Digunakan
 
-php artisan boost:install
-```
+Aplikasi ini dikembangkan dengan *tech stack* modern untuk memastikan performa, keamanan, dan UI/UX yang dinamis:
+- **Backend:** [Laravel](https://laravel.com/) (Framework PHP yang kuat dan aman)
+- **Frontend / Styling:** [Tailwind CSS](https://tailwindcss.com/) (Utility-first CSS framework untuk desain antarmuka yang cepat dan responsif)
+- **Interaktivitas UI:** [Alpine.js](https://alpinejs.dev/) (Framework JavaScript ringan untuk menangani *dropdown*, modal, dll)
+- **Otentikasi:** Laravel Breeze
+- **Manajemen Hak Akses:** Spatie Laravel Permission
+- **Bundler:** Vite (Untuk proses kompilasi asset *frontend* yang sangat cepat)
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+---
 
-## Contributing
+## ⚙️ Panduan Instalasi (Development)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Ikuti panduan berikut untuk menjalankan proyek ini di *environment* lokal Anda:
 
-## Code of Conduct
+### Persyaratan Sistem
+- PHP 8.1 atau lebih baru
+- Composer
+- Node.js & NPM
+- MySQL / SQLite / PostgreSQL
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### Langkah-langkah
 
-## Security Vulnerabilities
+1. **Clone repository ini:**
+   ```bash
+   git clone <URL_REPOSITORY_ANDA>
+   cd PageTurn
+   ```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+2. **Install dependensi PHP melalui Composer:**
+   ```bash
+   composer install
+   ```
 
-## License
+3. **Install dependensi Node.js (untuk Frontend asset):**
+   ```bash
+   npm install
+   ```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+4. **Konfigurasi Environment:**
+   Salin file template `.env` dan konfigurasikan koneksi database Anda:
+   ```bash
+   cp .env.example .env
+   ```
+   *Buka file `.env` di teks editor dan sesuaikan kredensial `DB_DATABASE`, `DB_USERNAME`, dll.*
+
+5. **Generate Application Key Laravel:**
+   ```bash
+   php artisan key:generate
+   ```
+
+6. **Jalankan Migrasi Database:**
+   *(Jika Anda memiliki Database Seeder untuk data awal, Anda dapat menambahkan bendera `--seed`)*
+   ```bash
+   php artisan migrate
+   ```
+
+7. **Jalankan Server Lokal & Asset Bundler:**
+   Anda perlu membuka dua jendela terminal terpisah:
+   ```bash
+   # Terminal 1: Menjalankan server backend
+   php artisan serve
+
+   # Terminal 2: Menjalankan Vite untuk kompilasi Tailwind & JS
+   npm run dev
+   ```
+
+8. **Akses Aplikasi:**
+   Buka browser web Anda dan kunjungi `http://localhost:8000`.
+
+---
+
+## 📄 Lisensi
+
+Proyek ini bersifat *open-source* dan dilisensikan di bawah [MIT license](https://opensource.org/licenses/MIT).

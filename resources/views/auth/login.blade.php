@@ -69,9 +69,9 @@
                 @error('password')
                 <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
-                
+
                 <div class="text-end mt-2">
-                    <a href="#" class="auth-link-sm text-decoration-none">Lupa kata sandi?</a>
+                    <a href="" class="auth-link-sm text-decoration-none">Lupa kata sandi?</a>
                 </div>
             </div>
 
@@ -84,7 +84,7 @@
                     <line x1="15" y1="12" x2="3" y2="12"></line>
                 </svg>
             </button>
-            
+
             <p class="auth-footer-text text-center mt-4 mb-0">
                 Belum punya akun? <a href="{{ route('register') }}" class="text-white fw-bold text-decoration-none">Daftar sekarang</a>
             </p>

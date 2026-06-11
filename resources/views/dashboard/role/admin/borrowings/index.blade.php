@@ -49,7 +49,7 @@
                             <form action="{{ route('admin.borrowings.return', $detail->id) }}" method="POST" class="mt-2">
                                 @csrf
                                 @method('PATCH')
-                                <button type="submit" class="btn btn-outline-success btn-sm rounded-0 letter-spacing-1" onclick="return confirm('Tandai buku ini sudah dikembalikan?');">
+                                <button type="submit" class="btn btn-success btn-sm rounded-0 letter-spacing-1" onclick="return confirm('Tandai buku ini sudah dikembalikan?');">
                                     <i class="fa-solid fa-check me-1"></i> TANDAI DIKEMBALIKAN
                                 </button>
                             </form>

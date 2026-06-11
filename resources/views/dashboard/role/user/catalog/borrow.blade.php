@@ -81,19 +81,21 @@
                     </div>
 
                     <div class="col-12">
-                        <label class="text-muted fs-85 text-uppercase letter-spacing-1 mb-2">Buku Yang Dipinjam</label>
+                        <label class=" fs-85 text-uppercase letter-spacing-1 mb-2">Buku Yang Dipinjam</label>
                         <input type="text" class="form-control bg-transparent border-secondary border-opacity-25 text-white rounded-0 py-2" value="{{ $book->title }} — {{ $book->author }}" disabled>
                     </div>
 
                     <div class="col-12">
-                        <label class="text-muted fs-85 text-uppercase letter-spacing-1 mb-2">Alamat Peminjam <span class="text-danger">*</span></label>
+                        <label class=" fs-85 text-uppercase letter-spacing-1 mb-2">Alamat Peminjam <span class="text-danger">*</span></label>
                         <textarea name="address" class="form-control bg-dark border-secondary border-opacity-25 text-white rounded-0 py-2 @error('address') is-invalid @enderror" rows="3" required>{{ old('address') }}</textarea>
                         @error('address') <div class="invalid-feedback">{{ $message }}</div> @enderror
                     </div>
                 </div>
 
                 <div class="mt-5 d-flex gap-3">
-                    <button type="submit" class="btn btn-light rounded-0 px-5 py-2 letter-spacing-1 fw-bold">KONFIRMASI PINJAM</button>
+                      <form action="{{ route('user.catalog.borrow.store', $book->id) }}" method="POST" class="d-inline" onsubmit="return confirm('Apakah Anda yakin ingin meminjam buku ini?');">
+                    <button type="submit" class="btn btn-light rounded-0 px-5 py-2 letter-spacing-1 fw-bold" onclick="return confirm('Apakah Anda yakin ingin meminjam buku ini?');">KONFIRMASI PINJAM</button>
+                      </form>
                     <a href="{{ route('user.catalog.index') }}" class="btn btn-outline-secondary rounded-0 px-4 py-2 letter-spacing-1">BATAL</a>
                 </div>
             </form>

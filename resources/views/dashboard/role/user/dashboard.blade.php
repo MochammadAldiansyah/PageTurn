@@ -121,6 +121,7 @@
             <table class="table table-dark table-hover align-middle custom-table mb-0">
                 <thead>
                     <tr>
+                        <th class="text-uppercase text-secondary fw-normal letter-spacing-1 pb-3 border-bottom border-secondary border-opacity-25 fs-85">No.</th>
                         <th class="text-uppercase text-secondary fw-normal letter-spacing-1 pb-3 border-bottom border-secondary border-opacity-25 fs-85">Judul Buku</th>
                         <th class="text-uppercase text-secondary fw-normal letter-spacing-1 pb-3 border-bottom border-secondary border-opacity-25 fs-85">Dipinjam Pada</th>
                         <th class="text-uppercase text-secondary fw-normal letter-spacing-1 pb-3 border-bottom border-secondary border-opacity-25 fs-85">Dikembalikan Pada</th>
@@ -130,6 +131,7 @@
                 <tbody>
                     @foreach($historyBorrowings as $detail)
                     <tr>
+                        <td class="border-bottom border-secondary border-opacity-10 py-4">{{ $loop->iteration }}</td>
                         <td class="border-bottom border-secondary border-opacity-10 py-4">
                             <div class="text-white fs-90">{{ optional($detail->book)->title ?? 'Buku Tidak Diketahui' }}</div>
                             <div class="text-secondary fs-85 letter-spacing-1 mt-1">{{ optional($detail->book)->author ?? '-' }}</div>

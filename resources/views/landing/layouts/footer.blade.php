@@ -8,7 +8,6 @@
                     favoritmu kapan saja dan di mana saja.</p>
             </div>
 
-
             <!-- Tautan Navigasi -->
             <div class="col-md-4">
                 <div class="fw-bold text-white fs-5 font-oswald mb-3">Tautan Penting</div>
@@ -16,7 +15,7 @@
                     <a href="#" class="text-secondary text-decoration-none hover-white transition-colors">Kebijakan Privasi</a>
                     <a href="#" class="text-secondary text-decoration-none hover-white transition-colors">Syarat & Ketentuan</a>
                     <a href="#" class="text-secondary text-decoration-none hover-white transition-colors">Hubungi Dukungan</a>
-                    <a href="#" class="text-secondary text-decoration-none hover-white transition-colors">Dokumentasi</a>
+                    <a href="#" class="text-secondary text-decoration-none hover-white transition-colors">Tentang Kami</a>
                 </div>
             </div>
 
