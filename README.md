@@ -39,11 +39,11 @@ User adalah anggota perpustakaan yang telah mendaftar di sistem.
 
 Aplikasi ini dikembangkan dengan *tech stack* modern untuk memastikan performa, keamanan, dan UI/UX yang dinamis:
 - **Backend:** [Laravel](https://laravel.com/) (Framework PHP yang kuat dan aman)
-- **Frontend / Styling:** [Tailwind CSS](https://tailwindcss.com/) (Utility-first CSS framework untuk desain antarmuka yang cepat dan responsif)
-- **Interaktivitas UI:** [Alpine.js](https://alpinejs.dev/) (Framework JavaScript ringan untuk menangani *dropdown*, modal, dll)
-- **Otentikasi:** Laravel Breeze
+- **Frontend / Styling:** [Bootstrap](https://getbootstrap.com/) (Framework CSS populer untuk desain antarmuka responsif)
+- **Interaktivitas UI:** JavaScript Vanilla / jQuery (Sesuai dengan komponen Bootstrap)
+- **Otentikasi:** Sistem Autentikasi Laravel
 - **Manajemen Hak Akses:** Spatie Laravel Permission
-- **Bundler:** Vite (Untuk proses kompilasi asset *frontend* yang sangat cepat)
+- **Bundler:** Vite (Untuk proses kompilasi asset *frontend*)
 
 ---
 
